@@ -4,7 +4,11 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using TransaccionesClientes.Application.Interfaces.Repository.Clientes;
 using TransaccionesClientes.Application.Interfaces.Repository.Pedidos;
+using TransaccionesClientes.Application.Interfaces.Services.Clientes;
+using TransaccionesClientes.Application.Interfaces.Services.Pedidos;
 using TransaccionesClientes.Application.Interfaces.Services.Token;
+using TransaccionesClientes.Application.Services.Clientes;
+using TransaccionesClientes.Application.Services.Pedidos;
 using TransaccionesClientes.Application.Services.Token;
 using TransaccionesClientes.Infraestructure.Context;
 using TransaccionesClientes.Infraestructure.Respositories.Clientes;
@@ -24,6 +28,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped<IPedidoRepository, PedidoRepository>();
+builder.Services.AddScoped<IClientesServices, ClientesServices>();
+builder.Services.AddScoped<IPedidosServices, PedidosServices>();
+
 builder.Services.AddSingleton<ITokenService, TokenService>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -43,7 +50,20 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Angular",
+        policy =>
+        {
+            policy
+                .WithOrigins("http://localhost:4200")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+});
+
 builder.Services.AddAuthorization();
+
 
 var app = builder.Build();
 
@@ -55,6 +75,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("Angular");
 
 app.UseAuthentication();
 app.UseAuthorization();

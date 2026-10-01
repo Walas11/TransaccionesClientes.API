@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.37710.0 d17.14
+VisualStudioVersion = 17.14.37710.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -22,6 +22,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransaccionesClientes.Infraestructure", "..\TransaccionesClientes.Infraestructure\TransaccionesClientes.Infraestructure.csproj", "{C8E89C58-58A3-4EE8-BE2E-5CF069E0BF78}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransClientes.API", "..\WebApplication1\TransClientes.API.csproj", "{2112FBCB-5696-46F4-BC8B-F47567248F24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{4CD2AD9B-60D7-4820-9C72-B121CE2CD3C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransaccionClientes.Test", "TransaccionClientes.Test\TransaccionClientes.Test.csproj", "{9E20B331-825E-4FE0-A892-0F00F5123129}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +53,10 @@ Global
 		{2112FBCB-5696-46F4-BC8B-F47567248F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2112FBCB-5696-46F4-BC8B-F47567248F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2112FBCB-5696-46F4-BC8B-F47567248F24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E20B331-825E-4FE0-A892-0F00F5123129}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E20B331-825E-4FE0-A892-0F00F5123129}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E20B331-825E-4FE0-A892-0F00F5123129}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E20B331-825E-4FE0-A892-0F00F5123129}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +67,7 @@ Global
 		{778A520F-FACE-4724-B18A-0D73E436EAE3} = {8D6C0270-A12A-452D-A23B-BB198D53924B}
 		{C8E89C58-58A3-4EE8-BE2E-5CF069E0BF78} = {B1772298-B87D-4AAC-A195-2D25FAA5F680}
 		{2112FBCB-5696-46F4-BC8B-F47567248F24} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{9E20B331-825E-4FE0-A892-0F00F5123129} = {4CD2AD9B-60D7-4820-9C72-B121CE2CD3C3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05BC9834-C2AA-4711-A2A5-74C58B6BEDC9}
